@@ -1,4 +1,4 @@
-defmodule Synapse.Modules.Roster do
+defmodule Synapse.Roster do
   use Ejabberd.Module
   require Record
 
