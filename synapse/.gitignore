@@ -24,3 +24,12 @@ synapse-*.tar
 
 # Temporary files, for example, from tests.
 /tmp/
+
+priv/auth/node_modules
+
+# ejabberd config
+config/_DO_NOT_TOUCH_ejabberd.yml
+
+logs/
+
+mnesia/
