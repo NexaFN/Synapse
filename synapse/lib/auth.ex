@@ -1,5 +1,5 @@
 defmodule Synapse.Auth do
-    def check(user, _, "skibiditoliet") when user in ["xmpp-admin", "system"], do: {:nocache, true}
+    def check(user, _, "9h8liqqiomflqi0vj33kek27qbfzbmkp") when user in ["xmpp-admin", "system"], do: {:nocache, true}
     def check(user, _, _) when user in ["xmpp-admin", "system"], do: {:nocache, false}
  
     def check(_, _, "Solaris.Launcher.ActivityChannel~>J1,Gp89.5bc"), do: {:nocache, true}

@@ -1,7 +1,7 @@
 defmodule Synapse.Api do
   use HTTPoison.Base
 
-  @token "skibiditoliet"
+  @token "9h8liqqiomflqi0vj33kek27qbfzbmkp"
   @base_url "https://avalon-external-api.solarisfn.org/s/api/synapse"
 
   def endpoint, do: @base_url
