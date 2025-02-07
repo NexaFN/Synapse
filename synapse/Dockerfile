@@ -12,6 +12,7 @@ RUN apt-get update -y && \
         erlang-inets \
         libz-dev \
         libyaml-cpp-dev \
+        ejabberd \
         libssl-dev \
         libyaml-dev \
         libpython2.7-dev \
@@ -30,8 +31,9 @@ ENV MIX_ENV="prod"
 COPY mix.exs mix.lock ./
 COPY config/config.exs config/${MIX_ENV}.exs config/_DO_NOT_TOUCH_ejabberd.yml config/
 
-RUN mix deps.get --only $MIX_ENV --no-archives-check && \
-    mix deps.update fast_xml && \
+RUN mix local.hex --force && \
+    mix local.rebar --force && \
+    mix deps.get --only $MIX_ENV --no-archives-check && \
     mix deps.compile
 
 COPY certs/private.key certs/ca_bundle.crt certs/certificate.crt certs/
@@ -43,6 +45,8 @@ RUN mix compile && \
     mix release
 
 FROM ${RUNNER_IMAGE}
+
+COPY --from=builder --chown=nobody:root /usr/local/bin/ejabberdctl /usr/local/bin/
 
 RUN apt-get update -y && \
     apt-get install -y --no-install-recommends \
