@@ -3,7 +3,7 @@ defmodule Synapse.Application do
 
   def start(_type, _args) do
     children = [
-      {Synapse.Counter, []},
+      {Synapse.Tracker, []},
       {Task.Supervisor, name: Synapse.TaskSupervisor},
       {Bandit, plug: Synapse.Router, scheme: :http, port: 4040}
     ]

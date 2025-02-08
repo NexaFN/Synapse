@@ -161,7 +161,7 @@ shaper_rules:
 
 
 modules:
-  'Elixir.Synapse.Roster': {}
+  'Elixir.Synapse.Net': {}
 
   mod_pres_counter:
     count: 30

@@ -1,0 +1,1 @@
+15:36:02.010 [error] read protocol message: {:unknown_notification, "$/setTrace"}

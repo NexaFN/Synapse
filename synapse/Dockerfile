@@ -46,8 +46,6 @@ RUN mix compile && \
 
 FROM ${RUNNER_IMAGE}
 
-COPY --from=builder --chown=nobody:root /usr/local/bin/ejabberdctl /usr/local/bin/
-
 RUN apt-get update -y && \
     apt-get install -y --no-install-recommends \
         erlang-ssl \
