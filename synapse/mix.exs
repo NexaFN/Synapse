@@ -31,7 +31,8 @@ defmodule Synapse.MixProject do
       {:plug, "~> 1.14"},
       {:bandit, "~> 0.6"},
       {:hackney, git: "https://github.com/benoitc/hackney.git", override: true},
-      {:fast_xml, git: "https://github.com/AidasPa/fast_xml2.git", override: true}
+      {:fast_xml, git: "https://github.com/AidasPa/fast_xml2.git", override: true},
+      {:cors_plug, "~> 3.0"}
     ]
   end
 

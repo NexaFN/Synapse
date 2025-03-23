@@ -3,10 +3,12 @@ defmodule Synapse.Router do
   require Record
   Record.defrecord(:presence, Record.extract(:presence, from_lib: "xmpp/include/xmpp_codec.hrl"))
   @host Application.get_env(:synapse, :ejabberd).host
-  plug :match
-  plug Plug.Parsers, parsers: [:json], json_decoder: Jason
-  plug :dispatch
-  plug Plug.Logger
+plug CORSPlug, origin: "*"
+plug :match
+plug Plug.Parsers, parsers: [:json], json_decoder: Jason
+plug :dispatch
+plug Plug.Logger
+
   
   get "/health" do
     send_resp(conn, 200, "Alive")
