@@ -112,6 +112,7 @@ def get_friend_status(friend, server) do
         status: "offline",
         resource: nil,
         show: nil,
+        priority: 0
       }
 
     resources ->
