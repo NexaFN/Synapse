@@ -1,1 +1,25 @@
 15:36:02.010 [error] read protocol message: {:unknown_notification, "$/setTrace"}
+15:36:18.071 [error] ** (ErlangError) Erlang error: {:erpc, :noconnection}
+    (kernel 8.5.4.2) erpc.erl:710: :erpc.call/5
+    (lx_server 0.7.2) lib/lexical/server/provider/handlers/code_action.ex:16: LXical.Server.Provider.Handlers.CodeAction.handle/2
+    (lx_server 0.7.2) lib/lexical/server/task_queue.ex:79: anonymous fn/4 in LXical.Server.TaskQueue.State.as_task/2
+    (elixir 1.14.0) lib/task/supervised.ex:89: Task.Supervised.invoke_mfa/2
+    (elixir 1.14.0) lib/task/supervised.ex:34: Task.Supervised.reply/4
+    (stdlib 4.3.1.3) proc_lib.erl:240: :proc_lib.init_p_do_apply/3
+
+15:36:18.072 [warn] Task Elixir.LXical.Server.Provider.Handlers.CodeAction.handle/2 ran for  12 ms. Result :success
+15:36:31.382 [error] read protocol message: {:unknown_notification, "$/setTrace"}
+15:36:38.912 [error] stdio received :eof, server will stop.
+15:36:38.912 [error] Child LXical.Server.Transport.StdIO of Supervisor LXical.Server.Supervisor terminated
+** (exit) normal
+Pid: #PID<0.151.0>
+Start Call: LXical.Server.Transport.StdIO.start_link(:standard_io, &LXical.Server.protocol_message/1)
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
+15:36:38.912 [info] Child LXical.Server.Transport.StdIO of Supervisor LXical.Server.Supervisor started
+Pid: #PID<0.185.0>
+Start Call: LXical.Server.Transport.StdIO.start_link(:standard_io, &LXical.Server.protocol_message/1)
+Restart: :permanent
+Shutdown: 5000
+Type: :worker
