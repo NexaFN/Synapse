@@ -108,12 +108,10 @@ def get_friend_status(friend, server) do
   case :ejabberd_sm.get_user_resources(friend, server) do
     [] ->
       %{
-        username: friend,
         online: false,
         status: "offline",
         resource: nil,
         show: nil,
-        priority: 0
       }
 
     resources ->
