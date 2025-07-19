@@ -21,7 +21,7 @@ defmodule Synapse.Net do
     Synapse.Tracker.remove(user)
     :none
   end
-  def on_presence(_user, _server, "V2:Fortnite:WIN::Solaris." <> rest, _packet), do: :none
+  def on_presence(_user, _server, "V2:Fortnite:WIN::Nexa." <> rest, _packet), do: :none
   def on_presence(user, server, resource, packet) do
     unless Synapse.Tracker.check(user) do
       process_friends_presence(user, server, resource, packet)
@@ -67,7 +67,7 @@ defmodule Synapse.Net do
   end
   defp find_friend_resource([resource]), do: resource
   defp find_friend_resource(resources) do
-    Enum.find(resources, &(not String.starts_with?(&1, "V2:Fortnite:WIN::Solaris.")))
+    Enum.find(resources, &(not String.starts_with?(&1, "V2:Fortnite:WIN::Nexa.")))
   end
   defp route_presence(friend, user, server, resource, friend_resource, packet) do
     from_jid = :jid.from_string("#{friend}@#{server}/#{friend_resource}")
@@ -180,7 +180,7 @@ end
 
   defp find_best_resource([resource]), do: resource
   defp find_best_resource(resources) do
-    Enum.find(resources, List.first(resources), &(not String.starts_with?(&1, "V2:Fortnite:WIN::Solaris.")))
+    Enum.find(resources, List.first(resources), &(not String.starts_with?(&1, "V2:Fortnite:WIN::Nexa.")))
   end
   defp extract_presence_data(presence_stanza) do
     try do

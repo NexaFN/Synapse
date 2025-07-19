@@ -1,7 +1,7 @@
 defmodule Synapse.Api do
   use HTTPoison.Base
-  @token "9h8liqqiomflqi0vj33kek27qbfzbmkp"
-  @base_url "https://api-v1-horizon-fortnite-api.solarisfn.dev/s/api/synapse"
+  @token System.get_env("S_TOKEN")
+  @base_url "https://xenon-api-v1.nxa.app/synapse/api/v1"
   def endpoint, do: @base_url
   def process_request_url(path), do: endpoint() <> path
   def process_request_headers(headers) do

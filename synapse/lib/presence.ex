@@ -14,7 +14,7 @@ defmodule Synapse.Presence do
 
   defp get_highest_priority_resource(resources) do
     resources
-    |> Enum.sort_by(&String.starts_with?(&1, "V2:Fortnite:WIN::Solaris."))
+    |> Enum.sort_by(&String.starts_with?(&1, "V2:Fortnite:WIN::Nexa."))
     |> List.first()
   end
 
