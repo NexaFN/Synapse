@@ -88,4 +88,6 @@ EXPOSE 5222 5269 5280
 HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
     CMD nc -z localhost 5222 || exit 1
 
-CMD ["/app/bin/synapse", "start"]
+ENV S_TOKEN="2gb293gh289gh2809hf28h90901opjfpo1lpjzvlkjakljflakihl"
+CMD ["/app/bin/synapse", "start", "--token", "${TOKEN}"]
+
